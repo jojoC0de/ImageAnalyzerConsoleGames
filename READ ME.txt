@@ -1,0 +1,43 @@
+*** WARNING: NOT TESTED ON COMPUTERS RUNNING UNIX-BASED OPERATING SYSTEMS ***
+
+Notes: 
+1. programmed in matlab 2016a 
+2. intended images should be of video game cases, preferable with as little background as possible and of the front of the case,
+   although, it can give fairly accurate results with these two parameters not met
+3. images are provided within the image databases/game cases/cases directory/folder. 
+4. location/directory information can be copied from the windows explorer and should be copied within the single quotes
+
+Instructions:
+1. Open the Matlab stuffs folder
+
+2. Open up the ImageAnalyzer.m file
+
+3a. Edit the mydir and writedir variables with the location/directory of the image database provided (or one of your own) 
+   and the location/directory of where you want the output to be written. 
+
+3b. If you wish to edit the size of the slice of the image, edit the variable slice_percentage with a number ranging from 0.1-1.0
+    less than 0.1 may result in errors and anything greater than 1 will result in errors 
+    (tested and works as low as 0.01, but if other images are used may result in errors)
+
+4. In Matlab, to run the file, you can either drag and drop it into the command window, open it up in the built in editor
+   click the run button at the top, or click the F5 key 
+
+5. The program will more than likely run for 5-10 seconds, and then  stop. There is no indication of it's completing its task, 
+   but it has, and has written the excel files to the location/directory specified in the writedir variable
+
+6. The files created, that do not start with classification, hold the averages of the RGB (Red, Green, Blue) values where each row is a different image and 
+   each column, from the left, represent the Red, Green, and Blue values respectively. 
+
+7. The files that do have classification in their name represent the classification that the program has given each image based on the 
+   image provided, and the RGB data it was looking at
+
+
+Excel files explained:
+
+full_image_rgb_data: holds the RGB data after the analysis of the full image
+slice_of_image_rgb_data: holds the RGB data after the analysis of a slice of the image 
+average_rgb_data: holds the RGB data of the averages of the results from the full and slice of the image data
+classification_of_full_image_rgb_data: holds the classifications of each image provided after analysis of the entire image
+classification_of_slice_of_image_rgb_data: holds the classifications of each image provided after analysis of a slice of the image
+classification_of_average_rgb_data: holds the classification of each image provided after the results of the full and slice of the image 
+				    are averaged out
